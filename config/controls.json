@@ -1,0 +1,83 @@
+{
+  "tolerable_exception_rate": 0.02,
+  "sample_size": 60,
+  "confidence_level": "95%",
+  "tolerable_deviation_rate": "5%",
+  "allowable_sample_deviations": 0,
+  "controls": [
+    {
+      "control_id": "CTL-01",
+      "name": "Dual approval for high-value transactions",
+      "description": "Any approved card transaction above Rs. 2,00,000 must carry two distinct approvers before settlement.",
+      "risk": "Unauthorised or fraudulent high-value spend is settled without independent review.",
+      "type": "Preventive",
+      "nature": "Manual",
+      "frequency": "Per transaction",
+      "owner": "Card Authorisations Team Lead",
+      "threshold_inr": 200000,
+      "design_attributes": {
+        "owner_assigned": true,
+        "procedure_documented": true,
+        "threshold_defined": true,
+        "evidence_retained": true,
+        "addresses_risk": true,
+        "timely_execution": true
+      }
+    },
+    {
+      "control_id": "CTL-02",
+      "name": "Segregation of duties - initiator vs approver",
+      "description": "The employee who initiates a transaction may not approve the same transaction.",
+      "risk": "A single person can initiate and approve a transaction, enabling fraud or error to go undetected.",
+      "type": "Preventive",
+      "nature": "Automated",
+      "frequency": "Per transaction",
+      "owner": "Card Operations Manager",
+      "design_attributes": {
+        "owner_assigned": true,
+        "procedure_documented": true,
+        "threshold_defined": true,
+        "evidence_retained": true,
+        "addresses_risk": true,
+        "timely_execution": true
+      }
+    },
+    {
+      "control_id": "CTL-03",
+      "name": "Credit limit breach block",
+      "description": "Authorisation is declined when balance plus transaction amount would exceed the card credit limit.",
+      "risk": "Customers are extended credit beyond approved limits, increasing credit loss exposure.",
+      "type": "Preventive",
+      "nature": "Automated",
+      "frequency": "Per transaction",
+      "owner": "Credit Risk Operations",
+      "design_attributes": {
+        "owner_assigned": true,
+        "procedure_documented": true,
+        "threshold_defined": true,
+        "evidence_retained": true,
+        "addresses_risk": true,
+        "timely_execution": true
+      }
+    },
+    {
+      "control_id": "CTL-04",
+      "name": "Duplicate transaction detection (60 seconds)",
+      "description": "Transactions on the same card, at the same merchant, for the same amount within 60 seconds are flagged and reversed.",
+      "risk": "Customers are charged twice for one purchase, causing financial loss and complaints.",
+      "type": "Detective",
+      "nature": "Automated",
+      "frequency": "Daily",
+      "owner": "Merchant Services Operations",
+      "window_seconds": 60,
+      "design_attributes": {
+        "owner_assigned": true,
+        "procedure_documented": false,
+        "threshold_defined": true,
+        "evidence_retained": true,
+        "addresses_risk": true,
+        "timely_execution": true
+      }
+    }
+  ]
+}

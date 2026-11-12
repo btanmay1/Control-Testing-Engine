@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "period": "01 Oct 2025 - 30 Sep 2026",
+    "generated": "2026-11-12 23:52",
+    "records_in": 50350,
+    "records_clean": 50320,
+    "records_quarantined": 30,
+    "sample_size": 60,
+    "allowable": 0,
+    "tolerable": 0.02
+  },
+  "controls": [
+    {
+      "Control ID": "CTL-01",
+      "Control": "Dual approval for high-value transactions",
+      "Type": "Preventive / Manual",
+      "Owner": "Card Authorisations Team Lead",
+      "Population": "264",
+      "Exceptions": "10",
+      "Exception rate": "3.79%",
+      "Sample size": 124,
+      "Sample deviations": 4,
+      "Design score": "6/6",
+      "Design effectiveness": "Effective",
+      "Design gaps": "None",
+      "Operating effectiveness": "Needs Improvement",
+      "Control rating": "Partially Effective",
+      "Observation": "10 exceptions in 264 in-scope transactions (3.79%) against a 2% tolerance; 4 deviation(s) in a sample of 124."
+    },
+    {
+      "Control ID": "CTL-02",
+      "Control": "Segregation of duties - initiator vs approver",
+      "Type": "Preventive / Automated",
+      "Owner": "Card Operations Manager",
+      "Population": "50,320",
+      "Exceptions": "401",
+      "Exception rate": "0.80%",
+      "Sample size": 150,
+      "Sample deviations": 1,
+      "Design score": "6/6",
+      "Design effectiveness": "Effective",
+      "Design gaps": "None",
+      "Operating effectiveness": "Needs Improvement",
+      "Control rating": "Partially Effective",
+      "Observation": "401 exceptions in 50,320 in-scope transactions (0.80%) against a 2% tolerance; 1 deviation(s) in a sample of 150."
+    },
+    {
+      "Control ID": "CTL-03",
+      "Control": "Credit limit breach block",
+      "Type": "Preventive / Automated",
+      "Owner": "Credit Risk Operations",
+      "Population": "47,618",
+      "Exceptions": "606",
+      "Exception rate": "1.27%",
+      "Sample size": 150,
+      "Sample deviations": 3,
+      "Design score": "6/6",
+      "Design effectiveness": "Effective",
+      "Design gaps": "None",
+      "Operating effectiveness": "Needs Improvement",
+      "Control rating": "Partially Effective",
+      "Observation": "606 exceptions in 47,618 in-scope transactions (1.27%) against a 2% tolerance; 3 deviation(s) in a sample of 150."
+    },
+    {
+      "Control ID": "CTL-04",
+      "Control": "Duplicate transaction detection (60 seconds)",
+      "Type": "Detective / Automated",
+      "Owner": "Merchant Services Operations",
+      "Population": "47,618",
+      "Exceptions": "249",
+      "Exception rate": "0.52%",
+      "Sample size": 150,
+      "Sample deviations": 1,
+      "Design score": "5/6",
+      "Design effectiveness": "Needs Improvement",
+      "Design gaps": "Procedure documented",
+      "Operating effectiveness": "Needs Improvement",
+      "Control rating": "Partially Effective",
+      "Observation": "249 exceptions in 47,618 in-scope transactions (0.52%) against a 2% tolerance; 1 deviation(s) in a sample of 150."
+    }
+  ],
+  "reconciliation": [
+    {
+      "Control ID": "CTL-01",
+      "SQL exceptions": 10,
+      "Pandas exceptions": 10,
+      "SQL = Pandas": "Yes",
+      "Planted (ground truth)": 10,
+      "Detected planted": 10,
+      "Missed": 0,
+      "Unplanted detections": 0
+    },
+    {
+      "Control ID": "CTL-02",
+      "SQL exceptions": 401,
+      "Pandas exceptions": 401,
+      "SQL = Pandas": "Yes",
+      "Planted (ground truth)": 401,
+      "Detected planted": 401,
+      "Missed": 0,
+      "Unplanted detections": 0
+    },
+    {
+      "Control ID": "CTL-03",
+      "SQL exceptions": 606,
+      "Pandas exceptions": 606,
+      "SQL = Pandas": "Yes",
+      "Planted (ground truth)": 606,
+      "Detected planted": 606,
+      "Missed": 0,
+      "Unplanted detections": 0
+    },
+    {
+      "Control ID": "CTL-04",
+      "SQL exceptions": 249,
+      "Pandas exceptions": 249,
+      "SQL = Pandas": "Yes",
+      "Planted (ground truth)": 250,
+      "Detected planted": 249,
+      "Missed": 1,
+      "Unplanted detections": 0
+    }
+  ]
+}
